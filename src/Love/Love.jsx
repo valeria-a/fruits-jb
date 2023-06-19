@@ -11,8 +11,27 @@ const Love = () => {
         setLoved(!isLoved)
     }
 
+    let buttonToRender = null
+    if (isLoved) {
+        buttonToRender = 
+            <button onClick={handleClick} className="love-btn">
+                &#10084;&#65039;
+            </button>
+    } else {
+        buttonToRender = 
+            <button onClick={handleClick} className="love-btn">
+                &#129293;
+            </button>
+    }
+
+    let textClass = ""
+    if (isLoved) {
+        textClass = "red-btn"
+    }
+
     return (
         <>
+
             {/* <button onClick={handleClick} className="love-btn">&#129293;</button> */}
 
 
@@ -31,7 +50,7 @@ const Love = () => {
 
             {/*condition ?  code if true : code if false*/}
 
-            { isLoved
+            {/* { isLoved
 
             ?
                 //red heart
@@ -44,9 +63,21 @@ const Love = () => {
                 <button onClick={handleClick} className="love-btn">
                     &#129293;
                 </button>
-            }
+            } */}
 
-            <p>{isLoved ? 'Love' : "Don't love"}</p>
+            {buttonToRender}
+
+            {/* <p className={isLoved ? "red-btn" : ""}>
+                {isLoved ? 'Love' : "Don't love"}
+            </p> */}
+
+            <p className={textClass}>
+                {isLoved ? 'Love' : "Don't love"}
+            </p>
+
+            {isLoved &&
+                <p>GREAT</p>
+            }
 
             
         </>
