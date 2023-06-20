@@ -71,13 +71,17 @@ const Love = () => {
                 {isLoved ? 'Love' : "Don't love"}
             </p> */}
 
-            <p className={textClass}>
+            {/* <p className={textClass}>
+                {isLoved ? 'Love' : "Don't love"}
+            </p> */}
+
+            {/* <p style={{color: isLoved ? 'red' : 'black'}}>
                 {isLoved ? 'Love' : "Don't love"}
             </p>
 
             {isLoved &&
                 <p>GREAT</p>
-            }
+            } */}
 
             
         </>

@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import Love from './Love/Love';
+import FruitsList from './FruitsList/FruitsList';
 
 function App() {
   return (
     <>
       <h2>Fruits I love:</h2>
-      <Love />
+      <FruitsList />
     </>
   );
 }
