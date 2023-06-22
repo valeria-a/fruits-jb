@@ -3,10 +3,12 @@ import './App.css';
 import FruitsList from './FruitsList/FruitsList';
 import Summary from './Summary/Summary';
 import Demo from './Demo';
+import Name from './Name/Name';
 
 function App() {
 
   const [counter, setCounter] = useState(0)
+  const [submittedName, setSubmittedName] = useState('')
 
   // return(
   //   <Demo />
@@ -14,9 +16,10 @@ function App() {
 
   return (
     <>
-      <h2>Fruits I love:</h2>
+      <Name setSubmittedName={setSubmittedName}/> 
+      <h2>{submittedName ? `Fruits ${submittedName} loves:` : 'Fruits you love:'}</h2>
       <FruitsList counterCallback={setCounter}/>
-      <Summary counter={counter}/>
+      <Summary counter={counter} submittedName={submittedName}/>
     </>
   );
 }
