@@ -1,14 +1,27 @@
 import { useState } from "react";
 import './Love.css'
 
-const Love = () => {
+const Love = ({counterCallback}) => {
 
     const [isLoved, setLoved] = useState(false)
     console.log('Rendering Love', isLoved)
 
     const handleClick = () => {
         console.log('clicked! changing isLoved from', isLoved, !isLoved)
-        setLoved(!isLoved)
+        setLoved(!isLoved) // just scheduling the update
+        // setLoved(prev => !prev)
+        // counterCallback = setCounter from App (function)
+        counterCallback((prevCounter) => {
+            //React injects the prev (previous state value)
+            if (isLoved) {
+                return prevCounter - 1
+            } else {
+                return prevCounter + 1
+            }
+        }
+        )
+
+
     }
 
     let buttonToRender = null

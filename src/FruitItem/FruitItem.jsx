@@ -1,7 +1,7 @@
 import Love from '../Love/Love';
 import './FruitItem.css'
 
-const FruitItem = ({fruit}) => {
+const FruitItem = ({fruit, counterCallback}) => {
     console.log('Rendering FruitItem', fruit)
 
     // const {fruit} = props
@@ -18,8 +18,8 @@ const FruitItem = ({fruit}) => {
 
     return(
         <li>
-            <p>{fruit}</p>
-            <Love />
+            <p style={{flexGrow: 1}}>{fruit}</p>
+            <Love counterCallback={counterCallback}/>
         </li>
     )
 }
